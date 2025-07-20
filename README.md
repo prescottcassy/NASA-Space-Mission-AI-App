@@ -3,7 +3,7 @@ July 19th, 2025
 Artificial Intelligence Applications Course
 
 ## Project Overview
-This AI-powered app automatically retrieves and summarizes recent space imagery from NASA’s Astronomy Picture of the Day API. Using natural language processing (NLP), it generates concise captions and keyword tags for each photo—enhancing accessibility, searchability, and insight across NASA’s expanding visual archives.
+This AI-powered app automatically retrieves and summarizes recent space imagery from NASA’s Astronomy Picture of the Day API. Using natural language processing (NLP), it generates concise captions and keyword tags for each photo—enhancing accessibility and insight across NASA’s expanding visual archives.
 
 ## Table of Contents
 │
@@ -16,7 +16,7 @@ This AI-powered app automatically retrieves and summarizes recent space imagery 
 ## Tech Stack Summary
 -Data API: NASSA Astronomy API
 -NLP: Hugging Face Transformers
--Keyword Extractor: RAKE / spaCY
+-Keyword Extractor: spaCY
 -User Interface: Streamlit
 -Language: Python
 
