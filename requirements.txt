@@ -1,5 +1,5 @@
 # Requirements.txt
-This file contains the dependencies required for this app to run properly. 
+# This file contains the dependencies required for this app to run properly. 
 
 numpy==1.24.3
 requests==2.31.0
