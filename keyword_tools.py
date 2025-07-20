@@ -1,10 +1,12 @@
 # keyword_tools.py
-
+# spaCy Keyword Extractor
+# !pip install spacy - uncomment this line of code if you don't have spacy installed
 import spacy
 from collections import Counter
 
 nlp = spacy.load("en_core_web_sm")
 
+# Create a function to extract keywords using common NLP tools
 def extract_keywords(text, max_keywords=8):
     if not text:
         return ["No keywords found."]

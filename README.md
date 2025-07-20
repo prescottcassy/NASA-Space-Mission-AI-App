@@ -10,6 +10,7 @@ This AI-powered app contributes to NASA's space mission projects by enabling aut
 ├── README.md           # Project documentation
 ├── requirements.txt    # Project dependencies
 ├── my_app.py           # Main app file
+├── error_utils.py      # Basic error handling
 └── keyword_tools.py    # Keyword extraction
 
 ## Tech Stack Summary
