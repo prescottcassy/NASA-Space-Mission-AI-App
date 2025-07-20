@@ -25,7 +25,7 @@ def fetch_apod_data():
         return None
 
 def display_apod(data):
-    st.title(" Astronomy Picture of the Day")
+    st.title("Astronomy Picture of the Day")
     
     if "url" in data:
         st.image(data['url'], caption=data.get('title', ''), use_container_width=True)
@@ -39,8 +39,8 @@ def display_apod(data):
     st.markdown(f"[View on NASA]({data.get('hdurl', '')})")
 
 def main():
-    st.sidebar.header("🚀 Orbit Snap Controls")
-    st.sidebar.write("Fetching today’s space image...")
+    st.sidebar.header("Orbit Snap Controls")
+    st.sidebar.write("Fetching today’s space image.")
 
     apod_data = fetch_apod_data()
     if apod_data:
@@ -56,5 +56,3 @@ if data:
     st.subheader("Extracted Keywords")
     st.write(", ".join(keywords))
 
-# Suprress warnings in the Streamlit app
-warnings.filterwarnings("ignore", category=FutureWarning)

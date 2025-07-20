@@ -23,7 +23,7 @@ This AI-powered app contributes to NASA's space mission projects by enabling aut
 ## How to run this code
 1. Clone the repository
 2. Create a Virtual Environment (Recommended)
-3. Install Dependencies (Requirements.txt)
-4. Get a NASA API Key
+3. Install Dependencies (requirements.txt)
+4. Get a NASA APOD API Key for free
 5. (Optional) Create a .env File
-6. Launch the Streamlit App using your broswer
+6. Launch the Streamlit App using your broswer by running this code in your terminal: python -m streamlit run my_app.py
