@@ -28,7 +28,7 @@ def display_apod(data):
     st.title(" Astronomy Picture of the Day")
     
     if "url" in data:
-        st.image(data['url'], caption=data.get('title', ''), use_column_width=True)
+        st.image(data['url'], caption=data.get('title', ''), use_container_width=True)
 
     st.subheader("Date")
     st.text(data.get('date', 'Unknown'))
