@@ -4,5 +4,5 @@
 requests==2.31.0
 spacy==3.7.2
 streamlit==1.30.0
-transformer==4.40.1
+transformers==4.40.1
 torch==2.2.2
