@@ -3,6 +3,7 @@
 # Import python libraries for API key that will fetch NASA's Astronomy Picture of the Day
 import requests
 import streamlit as st
+import warnings
 from transformers import pipeline
 from keyword_tools import extract_keywords
 
@@ -54,3 +55,6 @@ if data:
     keywords = extract_keywords(data.get('explanation', ''))
     st.subheader("Extracted Keywords")
     st.write(", ".join(keywords))
+
+# Suprress warnings in the Streamlit app
+warnings.filterwarnings("ignore", category=FutureWarning)
