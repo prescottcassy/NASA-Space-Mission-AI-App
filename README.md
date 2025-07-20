@@ -3,7 +3,7 @@ July 19th, 2025
 Artificial Intelligence Applications Course
 
 ## Project Overview
-This AI-powered app contributes to NASA's space mission projects by enabling automated retrieval and summarization of recent space image data from NASA’s public APIs. Leveraging natural language processing (NLP), the system generates concise AI-driven captions and keyword tags for each photo, enhancing accessibility, educational outreach, and content indexing across the agency’s growing visual datasets.
+This AI-powered app automatically retrieves and summarizes recent space imagery from NASA’s Astronomy Picture of the Day API. Using natural language processing (NLP), it generates concise captions and keyword tags for each photo—enhancing accessibility, searchability, and insight across NASA’s expanding visual archives.
 
 ## Table of Contents
 │
