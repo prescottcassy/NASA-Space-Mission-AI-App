@@ -14,7 +14,7 @@ This AI-powered app automatically retrieves and summarizes recent space imagery 
 └── keyword_tools.py    # Keyword extraction
 
 ## Tech Stack Summary
--Data API: NASSA Astronomy API
+-Data API: NASA Astronomy API
 -NLP: Hugging Face Transformers
 -Keyword Extractor: spaCY
 -User Interface: Streamlit
