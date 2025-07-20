@@ -1,7 +1,6 @@
 # Requirements.txt
 # This file contains the dependencies required for this app to run properly. 
-
-python3.11 
+ 
 requests==2.31.0
 spacy==3.7.2
 streamlit==1.30.0
