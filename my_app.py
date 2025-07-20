@@ -1,9 +1,6 @@
 # orbit_snap.py
 
 # Import python libraries for API key that will fetch NASA's Astronomy Picture of the Day
-pip install streamlit transformers requests
-pip install transformers
-pip install requests
 import requests
 import streamlit as st
 from transformers import pipeline
