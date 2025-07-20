@@ -1,4 +1,4 @@
-# NASA-Space-Mission-AI-Project - Implementation Track by Cassy Cormier
+# NASA Space Mission AI Project - Implementation Track by Cassy Cormier
 July 19th, 2025
 Artificial Intelligence Applications Course
 
