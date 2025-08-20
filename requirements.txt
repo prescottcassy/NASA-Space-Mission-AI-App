@@ -3,6 +3,7 @@
  
 streamlit==1.13.0
 altair==4.2.2
+numpy==1.26.4
 requests==2.31.0
 transformers==4.39.3
 torch==2.8.0
