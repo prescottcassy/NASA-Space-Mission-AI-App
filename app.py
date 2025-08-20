@@ -53,12 +53,7 @@ if __name__ == "__main__":
     main()
 
 # spaCy Keyword Extractor
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    import subprocess
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
 
 # Create a function to extract keywords using common NLP tools
 def extract_keywords(text, max_keywords=8):
