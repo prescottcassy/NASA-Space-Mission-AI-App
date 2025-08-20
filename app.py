@@ -47,28 +47,29 @@ def display_apod(data):
 def main():
     st.sidebar.header("Orbit Snap Controls")
     st.sidebar.write("Fetching today’s space image.")
+    
     apod_data = fetch_apod_data()
-
+    
+    # Import and Display keywords
+    if apod_data:
+        display_apod(apod_data)
+        
+        # spaCy Keyword Extractor
+        nlp = spacy.load("en_core_web_sm")
+        
+        # Create a function to extract keywords using common NLP tools
+        def extract_keywords(text, max_keywords=8):
+            if not text:
+                return ["No keywords found."]
+            doc = nlp(text)
+            candidates = [token.lemma_.lower() for token in doc if token.pos_ in ["NOUN", "PROPN"] and not token.is_stop]
+            top = Counter(candidates).most_common(max_keywords)
+            return [word for word, _ in top]
+        
+        keywords = extract_keywords(apod_data.get('explanation', ''))
+        st.subheader("Extracted Keywords")
+        st.write(", ".join(keywords))
+    
 if __name__ == "__main__":
     main()
-
-# spaCy Keyword Extractor
-nlp = spacy.load("en_core_web_sm")
-
-# Create a function to extract keywords using common NLP tools
-def extract_keywords(text, max_keywords=8):
-    if not text:
-        return ["No keywords found."]
-    
-    doc = nlp(text)
-    candidates = [token.lemma_.lower() for token in doc if token.pos_ in ["NOUN", "PROPN"] and not token.is_stop]
-    top = Counter(candidates).most_common(max_keywords)
-    return [word for word, _ in top]
-
-# Import and Display keywords
-if apod_data:
-    display_apod(apod_data)
-    keywords = extract_keywords(apod_data.get('explanation', ''))
-    st.subheader("Extracted Keywords")
-    st.write(", ".join(keywords))
 
