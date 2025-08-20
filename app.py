@@ -17,14 +17,12 @@ API_KEY = st.secrets["API_KEY"]
 APOD_URL = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
 
 # Load summarization model
-@st.cache_resource
 def load_summarizer():
     return pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 
 summarizer = load_summarizer()
 
 # API Fetching
-@st.cache_data(ttl=3600)
 def fetch_apod_data():
     try:
         response = requests.get(APOD_URL)
