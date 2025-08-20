@@ -11,7 +11,7 @@ import warnings
 from transformers import pipeline
 
 # NASA APOD API Setup
-API_KEY = os.getenv("API_KEY")
+API_KEY = st.secrets["API_KEY"]
 APOD_URL = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
 
 # Load summarization model
