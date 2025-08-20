@@ -1,14 +1,17 @@
 # orbit_snap.py
 
 # Import python libraries for API key that will fetch NASA's Astronomy Picture of the Day
+# !pip install spacy - uncomment this line of code if you don't have spacy installed
 import requests
 import streamlit as st
+import spacy
+import os
+from collections import Counter
 import warnings
 from transformers import pipeline
-from keyword_tools import extract_keywords
 
 # NASA APOD API Setup
-API_KEY = "zSKrKQgBxbgjf7aMxT2Z3T9a5RVrCnRsZdJS6lCQ"
+API_KEY = os.getenv"API_KEY"
 APOD_URL = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
 
 # Load summarization model
@@ -48,6 +51,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# spaCy Keyword Extractor
+nlp = spacy.load("en_core_web_sm")
+
+# Create a function to extract keywords using common NLP tools
+def extract_keywords(text, max_keywords=8):
+    if not text:
+        return ["No keywords found."]
+    
+    doc = nlp(text)
+    candidates = [token.lemma_.lower() for token in doc if token.pos_ in ["NOUN", "PROPN"] and not token.is_stop]
+    top = Counter(candidates).most_common(max_keywords)
+    return [word for word, _ in top]
 
 # Import and Display keywords
 data = fetch_apod_data()
