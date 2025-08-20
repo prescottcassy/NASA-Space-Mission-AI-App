@@ -1,7 +1,6 @@
 # orbit_snap.py
 
 # Import python libraries for API key that will fetch NASA's Astronomy Picture of the Day
-# !pip install spacy - uncomment this line of code if you don't have spacy installed
 import requests
 import streamlit as st
 import spacy
@@ -18,9 +17,14 @@ API_KEY = st.secrets["API_KEY"]
 APOD_URL = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
 
 # Load summarization model
-summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+@st.cache_resource
+def load_summarizer():
+    return pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+
+summarizer = load_summarizer()
 
 # API Fetching
+@st.cache_data(ttl=3600)
 def fetch_apod_data():
     try:
         response = requests.get(APOD_URL)
