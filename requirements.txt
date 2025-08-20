@@ -6,3 +6,6 @@ spacy==3.7.2
 streamlit==1.30.0
 transformers==4.40.1
 torch==2.2.2
+numpy>=1.26.4
+setuptools>=68.0.0
+wheel>=0.42.0
