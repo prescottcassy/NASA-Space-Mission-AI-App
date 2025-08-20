@@ -1,11 +1,10 @@
 # requirements.txt
 # This file contains the dependencies required for this app to run properly. 
  
-requests==2.31.0
-spacy==3.7.2
-streamlit==1.30.0
-transformers==4.40.1
-torch==2.2.2
-numpy>=1.26.4
-setuptools>=68.0.0
-wheel>=0.42.0
+streamlit
+requests
+transformers
+torch
+spacy==3.5.3
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl
+
