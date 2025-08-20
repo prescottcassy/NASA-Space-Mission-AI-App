@@ -16,9 +16,6 @@ st.set_page_config(page_title="Orbit Snap", layout="wide")
 API_KEY = st.secrets["API_KEY"]
 APOD_URL = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
 
-# Load summarization model
-summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
-
 # API Fetching
 def fetch_apod_data():
     try:
@@ -55,6 +52,9 @@ def main():
         
         # spaCy Keyword Extractor
         nlp = spacy.load("en_core_web_sm")
+        
+        # Load summarization model
+        summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
         
         # Create a function to extract keywords using common NLP tools
         def extract_keywords(text, max_keywords=8):
