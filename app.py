@@ -10,6 +10,9 @@ from collections import Counter
 import warnings
 from transformers import pipeline
 
+# Layout Setup
+st.set_page_config(page_title="Orbit Snap", layout="wide")
+
 # NASA APOD API Setup
 API_KEY = st.secrets["API_KEY"]
 APOD_URL = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
@@ -44,16 +47,18 @@ def display_apod(data):
 def main():
     st.sidebar.header("Orbit Snap Controls")
     st.sidebar.write("Fetching today’s space image.")
-
     apod_data = fetch_apod_data()
-    if apod_data:
-        display_apod(apod_data)
 
 if __name__ == "__main__":
     main()
 
 # spaCy Keyword Extractor
-nlp = spacy.load("en_core_web_sm")
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    import subprocess
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
 
 # Create a function to extract keywords using common NLP tools
 def extract_keywords(text, max_keywords=8):
@@ -66,9 +71,9 @@ def extract_keywords(text, max_keywords=8):
     return [word for word, _ in top]
 
 # Import and Display keywords
-data = fetch_apod_data()
-if data:
-    keywords = extract_keywords(data.get('explanation', ''))
+if apod_data:
+    display_apod(apod_data)
+    keywords = extract_keywords(apod_data.get('explanation', ''))
     st.subheader("Extracted Keywords")
     st.write(", ".join(keywords))
 
