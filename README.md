@@ -20,10 +20,7 @@ This AI-powered app automatically retrieves and summarizes recent space imagery 
 -User Interface: Streamlit
 -Language: Python
 
-## How to run this code
-1. Clone the repository
-2. Create a Virtual Environment (Recommended)
-3. Install Dependencies (requirements.txt)
-4. Get a NASA APOD API Key for free
-5. (Optional) Create a .env File
-6. Launch the Streamlit App using your broswer by running this code in your terminal: python -m streamlit run my_app.py
+## Use the Live App
+You can explore the app instantly at https://cassy-space-info.streamlit.app/
+
+Note: If the app has been idle, it may take up to 2 minutes to fully spin up. Hang tight—it’s worth the wait!
