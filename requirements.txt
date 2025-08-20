@@ -2,6 +2,7 @@
 # This file contains the dependencies required for this app to run properly. 
  
 streamlit==1.13.0
+altair==4.2.2
 requests==2.31.0
 transformers==4.39.3
 torch==2.8.0
