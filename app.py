@@ -1,4 +1,4 @@
-# orbit_snap.py
+# app.py
 
 # Import python libraries for API key that will fetch NASA's Astronomy Picture of the Day
 import requests
