@@ -19,6 +19,6 @@ This AI-powered app automatically retrieves and summarizes recent space imagery 
 -Language: Python
 
 ## Use the Live App
-You can explore the app instantly at https://cassy-space-info.streamlit.app/
+You can explore the app instantly at https://cassy-nasa-space-image-app.streamlit.app/
 
 Note: If the app has been idle, it may take up to 2 minutes to fully spin up. Hang tight—it’s worth the wait!
